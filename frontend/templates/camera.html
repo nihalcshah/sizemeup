@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<title>Size Me Up</title>
+<script src="{% static 'js/script.js' %}"></script>
+
+<section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;"">
+  <h3>Upload an Image of you to get "sized up"</h3>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Image</label>
+      <input class="form-control" name="picture" type="file" id="formFile">
+    </div>    
+    <button type="submit" class="btn btn-submit">Submit</button>
+  </form>
+</section>    
+{% endblock %}
+    
+    <!-- Profile Bio -->
