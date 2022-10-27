@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<title>Size Me Up</title>
+<script src="{% static 'js/script.js' %}"></script>
+
+<section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;"">
+  <h3>Upload an Image of you to get "sized up"</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="bodyImage" class="form-label">Image</label>
+      <div class="form-control">{{form.bodyImage}}</div>
+      <label for="height" class="form-label">Height</label>
+      <div class="form-control">{{form.height}}</div>
+      <!-- <input class="form-control" name="picture" type="file" id="formFile"> -->
+    </div>    
+    <button type="submit" class="btn btn-submit">Submit</button>
+  </form>
+</section>    
+{% endblock %}
+    
+    <!-- Profile Bio -->

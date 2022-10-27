@@ -23,6 +23,7 @@
 
 <body class="fonts container-lg">
     {% block nav %}
+
 	<nav class="navbar navbar-expand-lg navbar-custom navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand h1 fs-1" href="{% url 'home' %}"><b>SIZE</b>MEUP</a>
@@ -31,15 +32,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+					{% if user.is_authenticated %}
                     <li class="nav-item fs-4">
-                    	<a class="nav-link active h2 hoverscroll" aria-current="page" href="#Experience">Use</a>
+                    <a class="nav-link active h2 hoverscroll"  aria-current="page" href="sizeup">Camera</a>
                     </li>
+					<li class="nav-item fs-4">
+						<span class="nav-link active h2 hoverscroll"  aria-current="page">Hello {{ user.get_username }}</span>
+					</li>
+					{% else %}
                     <li class="nav-item fs-4">
-                    <a class="nav-link active h2 hoverscroll"  aria-current="page" href="camera">Camera</a>
-                    </li>
-                    <li class="nav-item fs-4">
-                    <a class="nav-link active h2 hoverscroll"  aria-current="page" href="#Education">Sign In</a>
-                    </li>
+						<a class="nav-link active h2 hoverscroll"  aria-current="page" href="register">Sign In</a>
+					</li>
+					{% endif %}
                 </ul>
             </div>
         </div>
