@@ -4,22 +4,79 @@
 
 {% block content %}
 <title>Size Me Up</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="{% static 'js/script.js' %}"></script>
 
-<section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;"">
-  <h3>Upload an Image of you to get "sized up"</h3>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="mb-3">
-      <label for="bodyImage" class="form-label">Image</label>
-      <div class="form-control">{{form.bodyImage}}</div>
-      <label for="height" class="form-label">Height</label>
-      <div class="form-control">{{form.height}}</div>
-      <!-- <input class="form-control" name="picture" type="file" id="formFile"> -->
-    </div>    
-    <button type="submit" class="btn btn-submit">Submit</button>
-  </form>
-</section>    
-{% endblock %}
+<section class="container px-4" style="margin-top: 10vw; margin-bottom: 10vw;"">
+  <div id="formblock">
+      <h3>Upload an pic to get sized up!</h3>
+      <form method="post" id="formdata" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="bodyImage" class="form-label">Image</label>
+          <!-- <div class="form-control">{{form.bodyImage}}</div> -->
+          <input type="file" name="bodyImage" class="form-control">
+          <label for="height" class="form-label">Height</label>
+          <!-- <div class="form-control">{{form.height}}</div> -->
+          <input type="text" name="height" class="form-control" >
+          <!-- <input class="form-control" name="picture" type="file" id="formFile"> -->
+        </div>    
+        <button type="submit" class="btn btn-submit">Submit</button>
+      </form>
+  </div>
+  <div id="spinner" class="d-flex align-items-center justify-content-center d-none">
+    <div>
+      <h3 class="row">We're getting your measurements</h3>
+      <div class="spinner-border row text-center" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div id="results" style="display: none;">
+    <h3>We sized you up!</h3>
+    {% if count %}
+    <img class="rounded img-fluid" src="{{ imgPath }}" alt="">
+    {% else %}
+    <p class="fs-5">We did not detect any people</p>
+    {% endif %}
+  </div>
+</section>   
+
+<script type="text/javascript">
+
+
+  document.getElementById("formdata").addEventListener("submit", function(e){
+      e.preventDefault();
+      //var url = '/'
+      document.getElementById("formblock").style.display = "none";
+      // document.getElementById("spinner").style.display = "inline";
+      document.getElementById("spinner").classList.remove("d-none")
+      // input
+      var input = document.querySelector('input[type="file"]')
+      const formData = new FormData();
     
+      //console.log(name);
+      formData.append('bodyImage', input.files[0]);
+      formData.append('height', document.getElementsByName("height")[0].value);
+      console.log(formData)
+      formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+      fetch('{% url "calculate" %}', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          document.getElementById("results").style.display = "block";
+          document.getElementById("spinner").classList.add("d-none")
+      }).catch(error => {
+          console.error('Error:', error);
+          console.log("k")
+      });
+  });
+
+</script>
+
+{% endblock %}
+
     <!-- Profile Bio -->

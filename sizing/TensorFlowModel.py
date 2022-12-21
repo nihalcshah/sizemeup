@@ -64,12 +64,11 @@ def bodyDetect(imgPath):
     # threshold = 0.7
     # cap = cv2.VideoCapture('/path/to/input/video')
     # path = ''
-    threshold = 0.7
-    print(os.path.exists('./sizing/frozen_inference_graph.pb'))
+    threshold = 0.8
     obj = DetectorAPI("./sizing/frozen_inference_graph.pb")
     k = '.'+imgPath
     img = cv2.imread(k)
-    # img = cv2.resize(img, (720, 1280))
+    img = cv2.resize(img, (int(img.shape[1]*0.75), int(img.shape[0]*0.75)), cv2.INTER_AREA)
 
     boxes, scores, classes, num = obj.processFrame(img)
 

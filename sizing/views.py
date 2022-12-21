@@ -6,6 +6,7 @@ from .models import Body
 from .forms import BodyForm
 import cv2
 from .backend import facialDetection
+from django.http import JsonResponse
 from .TensorFlowModel import bodyDetect
 # Create your views here.
 def Home(request):
@@ -28,4 +29,8 @@ def success(request):
     print(filePath)
     newPath, faceCount = bodyDetect(filePath)
     
-    return render(request, "results.html", context={'count': bool(faceCount), 'imgPath':newPath})
+    return JsonResponse({'count': bool(faceCount), 'imgPath':newPath}, safe=False)
+    # return render(request, "results.html", context={'count': bool(faceCount), 'imgPath':newPath})
+
+def Register(request):
+    return render(request, "register.html")
