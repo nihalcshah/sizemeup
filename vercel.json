@@ -2,7 +2,10 @@
     "builds": [
       {
         "src": "sizemeup/wsgi.py",
-        "use": "@vercel/python"
+        "use": "@vercel/python",
+        "api/**/*.py": {
+            "excludeFiles": "public/**"
+          }
       }
     ],
     "routes": [
@@ -10,11 +13,5 @@
         "src": "/(.*)",
         "dest": "sizemeup/wsgi.py"
       }
-    ],
-    "functions": {
-        "api/**/*.py": {
-          "excludeFiles": "public/**"
-        }
-      }
-    
+    ]
   }
