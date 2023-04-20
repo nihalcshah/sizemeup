@@ -1,0 +1,14 @@
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    useDownloadCache: true
+    useStaticCache: false
+    slim: true
+    strip: false
+    layer:
+      name: ${self:provider.stage}-cv2-django-tensorflow
+      description: Python requirements lambda layer
+      compatibleRuntimes:
+        - python3.8
+      allowedAccounts:
+        - '*'
