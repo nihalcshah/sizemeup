@@ -1,12 +1,81 @@
 body{
     background-color:white;
     color: #0a0825;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.grad{
+   background: linear-gradient(92.68deg, #B1742B 0%, #FFFFFF 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+.bg-cover{
+   position: relative;
+   height: 80vh;
+}
+
+.bg-cover::before {    
+   content: "";
+   background-image: url('https://images.pexels.com/photos/2457183/pexels-photo-2457183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+   background-size: cover;
+   background-clip: text;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   opacity: 0.25;
+   z-index: 0;
 }
 
 a{
    text-decoration: none;
-   color: #0a0825;
 }
+
+.buttonFill {
+   position: relative;
+   font-weight: 700;
+   font-size: 15px;
+   letter-spacing: 2px;
+   color: rgb(255, 255, 255);
+   border: 3px white solid;
+   /* border-image: linear-gradient(#f6b73c, #4d9f0c) 30; */
+   text-decoration: 0;
+   outline: 0;
+   overflow:hidden;
+   background: none;
+   z-index: 1;
+   cursor: pointer;
+   transition:         0.08s ease-in;
+   -o-transition:      0.08s ease-in;
+   -ms-transition:     0.08s ease-in;
+   -moz-transition:    0.08s ease-in;
+   -webkit-transition: 0.08s ease-in;
+ }
+ 
+ .buttonFill:hover {
+   color: white;
+   font-weight: 900;
+ }
+ 
+ .buttonFill:before {
+   content: "";
+   position: absolute;
+   background: linear-gradient(92.68deg, #B1742B 0%, #FFFFFF 100%);
+   bottom: 0;
+   opacity: 0.6;
+   left: 0;
+   right: 100%;
+   top: 0;
+   z-index: -1;
+   -webkit-transition: right 0.15s ease-in;
+ }
+ 
+ .buttonFill:hover:before {
+   right: 0;
+ }
 
 .navbar-custom{
    

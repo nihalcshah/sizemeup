@@ -5,8 +5,6 @@ urlpatterns = [
     path('', views.Home, name='home'),
     path('sizeup', views.Calculate, name='calculate'),
     path('success', views.success, name = 'success'),
-
-    # path('camera', views.Camera, name='camera'),
 ]
 
 from django.conf import settings
