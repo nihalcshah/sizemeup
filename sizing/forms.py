@@ -1,4 +1,3 @@
-from tkinter import Image
 from django import forms
 from .models import Body
   
