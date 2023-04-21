@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-c+m)rayrfrq2h+69@6k75glucg&1@+j(h+(0k9@#vyrgq%irr!
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "sizemeup-nlfuy1zpi-nihalcshah.vercel.app",
     "sizemeup.cjshah.org"
 ]
@@ -125,6 +126,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     str(BASE_DIR / 'frontend/static'),
