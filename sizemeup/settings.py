@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-c+m)rayrfrq2h+69@6k75glucg&1@+j(h+(0k9@#vyrgq%irr!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "sizemeup-nlfuy1zpi-nihalcshah.vercel.app",
+    "sizemeup.cjshah.org"
+]
 
 
 # Application definition
