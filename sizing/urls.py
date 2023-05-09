@@ -3,8 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.Home, name='home'),
-    # path('sizeup', views.Calculate, name='calculate'),
-    # path('success', views.success, name = 'success'),
+    path('sizeup', views.Calculate, name='calculate'),
+    path('success', views.success, name = 'success'),
 ]
 
 from django.conf import settings

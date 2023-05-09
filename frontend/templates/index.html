@@ -5,18 +5,59 @@
 {% block content %}
 <title>Size Me Up</title>
 
-<section class="d-flex bg-cover" style=" background-color: #262626; color: whitesmoke;">
+<section class="flex bg-cover" style=" background-color: #262626; color: whitesmoke;">
       
       <div class="m-auto text-center">
         <img class="mx-auto img-fluid animate__animated animate__backInDown" src="./media/group1.png" style="width: 20vw;" alt="">
-          <h1 style="font-weight: 600; font-size: 10vw; z-index: 1;" class="grad text-center magictime foolishIn">SIZE ME UP</h1>
+          <h1 style="font-size: 10vw; z-index: 1; " class="font-black grad text-center magictime foolishIn">SIZE ME UP</h1>
           <!-- <h5 style="font-weight: 600; animation-duration: 500ms;" class="row fadeInLeft">Size your clothing in 3 shorts step.</h5> -->
           <br>
-          <a class="buttonFill p-2 m-2 text-center mx-auto animate__animated animate__fadeIn" style="position: relative; font-size: 1.5vw;"><b>GET STARTED</b></a>
+          <a class="buttonFill py-2 px-3 text-md m-2 text-center mx-auto bg-purple bg-clip-border animate__animated animate__fadeIn" style="position: relative;"><b>GET STARTED</b></a>
           
           <!-- <span class="row fadeInLeft" style="animation-duration: 300ms;">Scroll to read more</span> -->
       </div>
 </section>    
+<section>
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+    <h1 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-6xl">Online clothing shopping made simple</h1>
+    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">SizeMeUp employs size-gauging algorithms to maximize shopping efficiency and minimize return costs. Get a size with the click of a button.</p>
+    <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+        <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg hover:text-white bg-gradient-to-br from-rose-400 to-amber-500 hover:bg-gradient-to-bl font-semibold text-white focus:ring-4 focus:ring-blue-300 focus:ring-blue-900">
+            Get started
+            <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+        <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center font-semibold text-gray-900 rounded-lg border-2 border-gray-300 hover:text-white hover:bg-gray-800 focus:ring-4 focus:ring-gray-100 ">
+            Learn more
+        </a>  
+    </div>
+</div>
+</section>
+
+<section>
+  <div class="p-10 grid grid-cols-12 gap-y-2 gap-x-5">
+    <div class="col-span-4 ">
+        <div class="flex items-center justify-center">
+          <div class="grid grid-cols-2 gap-6">
+              <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
+                <img class="object-contain p-5 h-44 m-auto"  src="/media/nike.png"/>
+              </div>
+              <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
+                <img class="object-contain p-5 h-44 m-auto"  src="/media/zara.png"/>
+              </div>
+              <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
+                <img class="object-contain p-5 h-44 m-auto"  src="/media/hm.png"/>
+              </div>
+              <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
+                <img class="object-contain p-5 h-44 m-auto"  src="/media/hollister.png"/>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-span-8 flex">
+      <div class="font-semibold text-2xl p-7 self-center">
+        <b class="text-5xl">Using brands like <u class="bg-gradient-to-r from-rose-500 to-orange-400 bg-clip-text text-transparent"> H&M, Zara, Nike, and Hollister </u> </b><br/> SizeMeUp can be used with SizeMeUp to help size you, using the charts from each brand to pair with our algorithm and find user sizes.
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
-    
-    <!-- Profile Bio -->
