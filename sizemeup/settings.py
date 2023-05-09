@@ -31,13 +31,6 @@ ALLOWED_HOSTS = [
     "sizemeup.cjshah.org"
 ]
 
-COMPRESS_ROOT = BASE_DIR / 'frontend/static'
-
-COMPRESS_ENABLED = True
-
-STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "compressor",
     'sizing'
 ]
 
