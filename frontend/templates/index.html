@@ -5,22 +5,50 @@
 {% block content %}
 <title>Size Me Up</title>
 
-<section class="flex bg-cover" style=" background-color: #262626; color: whitesmoke;">
+ <script>
+  async function showOnHover(){
+    console.log("dsf 1")
+    itemList = document.getElementsByClassName("classk")
+    console.log(itemList)
+    for(var i=0; i<itemList.length; i++){
       
+      if(itemList[i].classList.contains("hidden")){
+        itemList[i].classList.remove("hidden")
+      }else{
+        itemList[i].classList.add("hidden")
+        // await new Promise(r => setTimeout(r, 300));
+      }
+    }
+  }
+ </script>
+
+<section class="flex bg-cover" style=" background-color: #262626; color: whitesmoke;">
+      <div class="absolute top-10 right-10">
+         <div class="flex flex-row-reverse rounded-xl text-white bg-zinc-600">
+          <div class="p-2  text-black rounded-e-xl hover:bg-zinc-800 " onclick="showOnHover()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" class="" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+            </svg>
+          </div>
+          <a href="/sizeup" class="p-2 hover:bg-zinc-800 text-white hidden classk" >
+            Sizing
+          </a>
+          <a href="/insight" class="p-2  hover:bg-zinc-800 text-white hidden classk" >
+            Insight
+          </a>
+         </div>
+      </div>
       <div class="m-auto text-center">
         <img class="mx-auto img-fluid animate__animated animate__backInDown" src="./media/group1.png" style="width: 20vw;" alt="">
           <h1 style="font-size: 10vw; z-index: 1; " class="font-black grad text-center magictime foolishIn">SIZE ME UP</h1>
-          <!-- <h5 style="font-weight: 600; animation-duration: 500ms;" class="row fadeInLeft">Size your clothing in 3 shorts step.</h5> -->
           <br>
-          <a class="buttonFill py-2 px-3 text-md m-2 text-center mx-auto bg-purple bg-clip-border animate__animated animate__fadeIn" style="position: relative;"><b>GET STARTED</b></a>
-          
-          <!-- <span class="row fadeInLeft" style="animation-duration: 300ms;">Scroll to read more</span> -->
+          <a href="/sizeup" class="buttonFill py-2 px-3 text-md m-2 text-center mx-auto bg-purple bg-clip-border animate__animated animate__fadeIn" style="position: relative;"><b>GET STARTED</b></a>
       </div>
 </section>    
 <section>
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
     <h1 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-6xl">Online clothing shopping made simple</h1>
-    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">SizeMeUp employs size-gauging algorithms to maximize shopping efficiency and minimize return costs. Get a size with the click of a button.</p>
+    <p class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48">SizeMeUp employs size-gauging algorithms to maximize shopping efficiency and minimize return costs. Get a size with the click of a button.</p>
     <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
         <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg hover:text-white bg-gradient-to-br from-rose-400 to-amber-500 hover:bg-gradient-to-bl font-semibold text-white focus:ring-4 focus:ring-blue-300 focus:ring-blue-900">
             Get started
@@ -34,28 +62,91 @@
 </section>
 
 <section>
-  <div class="p-10 grid grid-cols-12 gap-y-2 gap-x-5">
-    <div class="col-span-4 ">
-        <div class="flex items-center justify-center">
+  <div class="px-5 md:px-20 py-10">
+    <div class="lg:flex border-y-4 my-5 border-4 border-slate-500 lg:h-56 mx-5 md:mx-36 overflow-hidden rounded-xl">
+      <div class="lg:w-56 w-full h-56 overflow-hidden">
+        <img class="object-fill w-full hover:scale-125 " src="media\cj.jpg" />
+
+      </div>
+      <div class=" p-4  flex">
+        <div class="my-auto object-contain">
+          <h1 class="text-4xl font-semibold">Nihal CJ Shah</h1>
+          <h6 class="text-2xl italic mb-3">Co-creator of SizeMeUp and Full-stack freelancer</h6>
+          <div class="md:flex">
+            <a href="https://www.linkedin.cjshah.org" class="text-white p-3 bg-gradient-to-br from-blue-800 to-blue-500 flex hover:bg-gradient-to-bl rounded-lg">
+              <div class="mx-auto flex">
+                Find me on LinkedIn 
+                <svg class="my-auto mx-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"> <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/> </svg>
+              </div>
+            </a>
+            <div class=" md:my-auto text-center my-3 md:mx-4">OR</div>
+            <a href="https://www.cjshah.org" class=" flex text-black p-3 border-2 border-slate-900 hover:bg-gradient-to-br hover:text-white hover:from-neutral-950 hover:to-slate-700  rounded-lg">
+              <div class="mx-auto flex">
+                Check out my website
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" class="my-auto mx-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>     
+              </div>                     
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:flex border-y-4 my-5 border-4 border-slate-500 lg:h-56 mx-5 md:mx-36 overflow-hidden rounded-xl">
+      <div class="lg:w-56 w-full h-56 overflow-hidden">
+        <img class="object-fill w-full hover:scale-125 " src="media\kevin.jpg" />
+
+      </div>
+      <div class=" p-4  flex">
+        <div class="my-auto object-contain">
+          <h1 class="text-4xl font-semibold">Kevin Sridhar</h1>
+          <h6 class="text-2xl italic mb-3">Co-creator of SizeMeUp</h6>
+          <div class="md:flex">
+            <a href="https://www.linkedin.cjshah.org" class="text-white p-3 bg-gradient-to-br from-blue-800 to-blue-500 flex hover:bg-gradient-to-bl rounded-lg">
+              <div class="mx-auto flex">
+                Find me on LinkedIn 
+                <svg class="my-auto mx-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"> <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/> </svg>
+              </div>
+            </a>
+            <div class=" md:my-auto text-center my-3 md:mx-4">OR</div>
+            <a href="https://www.cjshah.org" class=" flex text-black p-3 border-2 border-slate-900 hover:bg-gradient-to-br hover:text-white hover:from-neutral-950 hover:to-slate-700  rounded-lg">
+              <div class="mx-auto flex">
+                Check out my website
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" class="my-auto mx-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>     
+              </div>                     
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="p-10 grid md:grid-cols-12 gap-y-2 gap-x-5 ">
+    <div class="col-span-12 md:col-span-4 flex">
+        <div class="flex items-center justify-center m-auto">
           <div class="grid grid-cols-2 gap-6">
               <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
-                <img class="object-contain p-5 h-44 m-auto"  src="/media/nike.png"/>
+                <img class="object-contain p-5 h-full m-auto"  src="/media/nike.png"/>
               </div>
               <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
-                <img class="object-contain p-5 h-44 m-auto"  src="/media/zara.png"/>
+                <img class="object-contain p-5 h-full m-auto"  src="/media/zara.png"/>
               </div>
               <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
-                <img class="object-contain p-5 h-44 m-auto"  src="/media/hm.png"/>
+                <img class="object-contain p-5 h-full m-auto"  src="/media/hm.png"/>
               </div>
               <div class="border-4 border-slate-500 bg-clip-border rounded-md flex shadow-sm shadow-slate-500 hover:shadow-inner hover:shadow-slate-500 ">
-                <img class="object-contain p-5 h-44 m-auto"  src="/media/hollister.png"/>
+                <img class="object-contain p-5 h-full m-auto"  src="/media/hollister.png"/>
               </div>
           </div>
       </div>
     </div>
-    <div class="col-span-8 flex">
+    <div class="col-span-12 md:col-span-8 flex">
       <div class="font-semibold text-2xl p-7 self-center">
-        <b class="text-5xl">Using brands like <u class="bg-gradient-to-r from-rose-500 to-orange-400 bg-clip-text text-transparent"> H&M, Zara, Nike, and Hollister </u> </b><br/> SizeMeUp can be used with SizeMeUp to help size you, using the charts from each brand to pair with our algorithm and find user sizes.
+        <p class="mb-4"><b class="text-5xl">Using brands like <u class="bg-gradient-to-r from-rose-500 to-orange-400 bg-clip-text text-transparent"> H&M, Zara, Nike, and Hollister </u> </b></p>
+        <p>SizeMeUp can be used with SizeMeUp to help size you, using the charts from each brand to pair with our algorithm and find user sizes.</p>
       </div>
     </div>
   </div>
