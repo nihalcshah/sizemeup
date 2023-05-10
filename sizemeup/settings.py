@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "sizemeup-nlfuy1zpi-nihalcshah.vercel.app",
     "sizemeup.cjshah.org"
+    "sizemeup.sites.tjhsst.edu"
 ]
 
 # Application definition
